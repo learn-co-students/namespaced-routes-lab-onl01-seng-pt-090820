@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2016_01_26_235547) do
+ActiveRecord::Schema.define(version: 2021_03_13_012128) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "preferences", force: :cascade do |t|
+    t.string "artist_sort_order"
+    t.string "song_sort_order"
+    t.boolean "allow_create_songs"
+    t.boolean "allow_create_artists"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "songs", force: :cascade do |t|
